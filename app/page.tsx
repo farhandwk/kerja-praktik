@@ -50,20 +50,26 @@ export default function SeminarPresentation() {
     }
   };
 
-  // Animation Variants
-  const fadeInUp = {
+// Animation Variants
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.7, 
+        ease: "easeOut" as const // <-- Tambahkan 'as const' di sini
+      } 
+    }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { staggerChildren: 0.2 }
     }
   };
-
   return (
     <div className="relative min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-zinc-700 selection:text-white pb-32 overflow-hidden">
       
